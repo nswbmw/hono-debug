@@ -1,17 +1,31 @@
 {
   "name": "hono-debug",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Hono middleware making it easy to debug.",
-  "type": "module",
-  "module": "index.js",
-  "scripts": {
-    "lint": "eslint ."
-  },
   "author": "nswbmw",
   "license": "MIT",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "tsup index.js --format esm,cjs",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "exports": {
+    ".": {
+      "import": "dist/index.js",
+      "require": "dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nswbmw/hono-debug"
+    "url": "git+https://github.com/nswbmw/hono-debug.git"
   },
   "keywords": [
     "hono",
@@ -33,6 +47,7 @@
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-n": "17.21.3",
     "eslint-plugin-promise": "6.1.1",
-    "hono": "4.9.6"
+    "hono": "4.9.6",
+    "tsup": "8.5.0"
   }
 }
