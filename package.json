@@ -1,12 +1,12 @@
 {
   "name": "hono-debug",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Hono middleware making it easy to debug.",
   "author": "nswbmw",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "scripts": {
     "lint": "eslint .",
     "build": "tsup index.js --format esm,cjs",
@@ -14,8 +14,8 @@
   },
   "exports": {
     ".": {
-      "import": "dist/index.js",
-      "require": "dist/index.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
